@@ -7,14 +7,14 @@ tools/buildindex.o: tools/buildindex.c tools/buildindex.h tools/util/primes.h to
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 tools/buildindex: tools/buildindex.o
-	$(CC) -lz -pthread -o $@ $<
+	$(CC) $< -lz -pthread -o $@
 	ln -sf src/tools/buildindex ../buildindex
 
 tools/merge.o: tools/merge.c tools/util/postinglistfile.h
 	$(CC) $(CFLAGS) -c -o $@ $<
 
 tools/merge: tools/merge.o
-	$(CC) -lz -pthread -o $@ $<
+	$(CC) $< -lz -pthread -o $@
 
 pythonmodule:
 	cd pymodule ; python3 setup.py build
