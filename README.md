@@ -10,13 +10,12 @@ source YarIx/bin/activate
 python3 -m pip install pip==21.0.1
 make -C src/
 pip install -r requirements.txt
-mkdir -p data/idx data/samples
 ```
 For a different linux distribution you probably need to adapt the first line to your package manager and environment.
 The above instructions create a virtual python environment called `YarIx` that needs to be activated as demonstrated so that `YarIx` can be used.
 
 # Overview
-After the previous step, the top directory should contain the following files:
+After the previous step, the top directory should contain the following files and directories:
 
 - `src/`: Source code for the index build and merge tools as well as the python extension
 - `buildindex`: The index build utility
