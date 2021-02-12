@@ -12,7 +12,7 @@ make -C src/
 pip install -r requirements.txt
 ```
 For a different linux distribution you probably need to adapt the first line to your package manager and environment.
-The above instructions create a virtual python environment called `YarIx` that needs to be activated as demonstrated so that `YarIx` can be used.
+The instructions above create a virtual python environment called `YarIx` that needs to be activated as demonstrated so that `YarIx` can be used.
 
 # Overview
 After the previous step, the top directory should contain the following files and directories:
