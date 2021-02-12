@@ -2,13 +2,17 @@
 This repository contains the code for the paper: "YarIx: Scalable YARA-based Malware Intelligence".
 
 # Preparation
-To build YarIx and install its dependencies, simply run:
+To build YarIx and install its dependencies on a Debian machine, simply run the following instructions in the top directory of this repository:
 ```
-apt-get install python3-pip zlib1g-dev zlib1g cmake curl
-make -C src
-python3 -m pip install yaramod yara networkx
+apt-get install cmake curl flex bison g++ gcc make python3 python3-dev python3-venv zlib1g zlib1g-dev wget
+python3 -m venv YarIx
+source YarIx/bin/activate
+python3 -m pip install pip==21.0.1
+make -C src/
+pip install -r requirements.txt
+mkdir -p data/idx data/samples
 ```
-Note that YarIx requires Python >= 3.6.
+For a different linux distribution you probably need to adapt the first line to your package manager and environment.The above instructions create a virtual python environment called `YarIx` that needs to be activated as demonstrated so that `YarIx` can be used.
 
 # Overview
 After the previous step, the top directory should contain the following files:
