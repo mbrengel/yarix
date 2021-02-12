@@ -1,5 +1,5 @@
 # compiler/linker stuff
-CFLAGS += -Wall -Werror -Wextra -Wpedantic -Ofast
+CFLAGS += -Wall -Wextra -Wpedantic -Ofast
 
 all: tools/buildindex tools/merge pythonmodule
 
