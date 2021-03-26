@@ -598,11 +598,8 @@ void read_filenames() {
         path = fgets(fpathsbuf, sizeof(fpathsbuf), fpaths);
 
         if (!path) break;
-        for (n = 0; ; n++) {
-            if (path[n] == ' ' || path[n] == '\n') {
-                path[n] = '\0';
-                break;
-            }
+        for (n = strlen(path) - 1; isspace(path[n]); n--) {
+            path[n] = '\0';
         }
         assert(n < MAX_FILENAME_LENGTH);
         strncpy(filenames[filenames_num], path, MAX_FILENAME_LENGTH);
