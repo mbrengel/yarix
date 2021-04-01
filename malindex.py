@@ -168,7 +168,7 @@ class Index():
                 with open(self.pathlistfile,  "rb") as f:
                     for i, l in enumerate(f):
                         if self.numsamples is None or i < self.numsamples:
-                            self.paths.append(l.split(b" ")[0].decode().rstrip("\n"))
+                            self.paths.append(l.decode())
             return self.paths[fid]
 
 class MergedIndex():
@@ -197,5 +197,5 @@ class MergedIndex():
         if not self.paths:
             with open(self.pathlistfile, "rb") as f:
                 for l in f:
-                    self.paths.append(l.split(b" ")[0].decode().rstrip("\n"))
+                    self.paths.append(l.decode())
         return self.paths[fid]

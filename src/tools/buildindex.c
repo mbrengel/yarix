@@ -596,18 +596,10 @@ void read_filenames() {
 
     while (path != NULL && filenames_num < MAX_NUM_FILE_NAMES && filenames_num < num_files_to_index) {
         path = fgets(fpathsbuf, sizeof(fpathsbuf), fpaths);
-
         if (!path) break;
-        for (n = 0; ; n++) {
-            if (path[n] == ' ' || path[n] == '\n') {
-                path[n] = '\0';
-                break;
-            }
-        }
         assert(n < MAX_FILENAME_LENGTH);
         strncpy(filenames[filenames_num], path, MAX_FILENAME_LENGTH);
         filenames_num++;
-
         cur_id++;
     }
 
