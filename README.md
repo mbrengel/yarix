@@ -134,7 +134,6 @@ This tool has been tested on Linux only, and only on systems with sufficient RAM
 
 Required arguments:
 - `-r`: Path to file that lists input files line by line.
-**WARNING**: `buildindex` stops reading file name upon the first space (ASCII 0x20) character.
 - `-w`: Output directory where buildindex will create its output files to. The speed of this output directory is usually the bottleneck for the entire computation, i.e., choose your target wisely. Experiments with NVMe SSD cards have been very promising performance-wise. **WARNING**: buildindex will create approximately 2**24 ~= 17M files and subdirectories in this path. Make sure that you have sufficicly many i-nodes left.
 - `-n`: Maximum number of files that should be indexed. The default and current maximum is 1M files. If you plan to index more files, it is highly advised to partition your input files into multiple 1M sets and merge the indexes using *yarix-indexmerge*. The main reason for this limit is the amount of memory that `buildindex` would otherwise require.
 
